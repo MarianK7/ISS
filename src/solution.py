@@ -271,4 +271,6 @@ for i in sos:
 
 print("Velkost: ", outData.size)
 
-wavfile.write('audio/out_test.wav', fs, outData.astype(np.float32))
+#wavfile.write('audio/out_test.wav', fs, outData.astype(np.float32))
+
+wavfile.write("audio/clean_bandstop.wav", fs, (outData * np.iinfo(np.int16).max).astype(np.int16))
